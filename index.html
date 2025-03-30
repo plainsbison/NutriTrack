@@ -1,13 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
-</head>
 <body>
-    <h1>Welcome to My Web Page</h1>
-    <p>This is a basic page deployed using GitHub Pages.</p>
-    <a href="test.html">Go to the Test Page</a>
+    <!-- Header Section -->
+    <header id="mainHeader">
+        <h1>Healthy Habits</h1>
+        <div id="navMenu">
+            <button class="navButton">Home</button>
+            <button class="navButton">Track</button>
+            <button class="navButton">Stats</button>
+            <button class="navButton">Settings</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Left side (Search & Tracker) -->
+        <div class="left-panel">
+            <!-- API Key Input -->
+            <div id="apiKeySection">
+                <input type="text" id="apiKeyInput" placeholder="Enter API Key">
+                <button id="setApiKeyButton">Set API Key</button>
+            </div>
+
+            <!-- Search bar and Button -->
+            <div class="search-box">
+                <input type="text" id="foodInput" placeholder="Search for food...">
+                <button id="searchButton">Search</button>
+                <div id="loading" style="display: none;">Loading...</div>
+            </div>
+
+            <!-- Food List Grid (Search Results) -->
+            <div id="foodListContainer" class="food-list-container" style="display: none;"></div>
+
+            <!-- Tracked Foods -->
+            <div class="tracker">
+                <h3>Tracked Foods</h3>
+                <ul id="trackedFoodsList"></ul>
+                <button id="clearTracker">Clear Tracker</button>
+                <button id="showBreakdown">Show Breakdown</button>
+
+                <!-- Statistical Breakdown Section -->
+                <div id="statisticalBreakdown" style="display: none; margin-top: 20px;">
+                    <h4>Statistical Breakdown</h4>
+                    <p><strong>Calories:</strong> <span id="caloriesStat">0</span></p>
+                    <p><strong>Fat:</strong> <span id="fatStat">0</span></p>
+                    <p><strong>Protein:</strong> <span id="proteinStat">0</span></p>
+                    <p><strong>Carbs:</strong> <span id="carbsStat">0</span></p>
+                    <p><strong>Fiber:</strong> <span id="fiberStat">0</span></p>
+                    <p><strong>Sugars:</strong> <span id="sugarsStat">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side (Graph) -->
+        <div class="right-panel">
+            <h3>Macronutrient Graph</h3>
+            <canvas id="macronutrientChart" width="800" height="600"></canvas>
+        </div>
+    </div>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- External Script -->
+    <script src="js/script.js"></script>
 </body>
 </html>

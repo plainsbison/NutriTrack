@@ -1,0 +1,170 @@
+/* Dark mode styles */
+body {
+    background-color: #121212;  /* Black background for the body */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transform: scale(0.95); 
+    transform-origin: top center; 
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+    font-size: 36px;  /* Larger text for the title */
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Menu Navigation */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nav-button {
+    padding: 12px 18px;
+    background-color: #555;  /* Grey background for menu buttons */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #444; /* Slightly darker grey for hover effect */
+}
+
+/* Container for the entire layout */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; 
+}
+
+/* Left side (Search & Tracker) */
+.left-panel {
+    flex: 1;
+    min-width: 300px; 
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* For search box, tracked foods, and breakdown */
+    gap: 20px;
+    background-color: #1e1e1e; /* Darker grey background for the left panel */
+    padding: 20px;
+    border-radius: 10px;  /* Rounded corners for left panel */
+}
+
+/* Right side (Graph & Statistical Breakdown) */
+.right-panel {
+    flex: 1.5;
+    min-width: 400px; /* Ensure the graph is big enough */
+    background-color: #1e1e1e; /* Darker grey background for the right panel */
+    padding: 20px;
+    border-radius: 10px;  /* Rounded corners for right panel */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Graph Title Styling */
+#graphContainer h2 {
+    margin-bottom: 15px; 
+    color: #FF5733; 
+    text-align: center; 
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 24px; 
+    border-radius: 10px;
+}
+
+/* Search Bar and Button Styling */
+.search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; 
+}
+
+input[type="text"] {
+    padding: 10px; /* Smaller padding for the search bar */
+    width: 80%; /* Reduce width to ensure it fits within its container */
+    max-width: 300px; 
+    border-radius: 8px;
+    border: 1px solid #888;
+    background-color: #333;
+    color: white;
+}
+
+button {
+    padding: 12px 18px;
+    background-color: #555; 
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #444; 
+}
+
+/* Additional styling for the Show Password button */
+button[type="button"] {
+    background-color: #555;
+    padding: 6px 12px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button[type="button"]:hover {
+    background-color: #444;
+}
+
+/* Food List Grid */
+.food-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+/* Tracked Foods List */
+#trackedFoodsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#trackedFoodsList li {
+    background-color: #333;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#trackedFoodsList li:hover {
+    background-color: #444;
+}
+
+/* Logout Button */
+#logoutButton {
+    background-color: #d9534f;
+    padding: 12px 18px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    background-color: #c9302c;
+}
