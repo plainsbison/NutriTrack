@@ -129,45 +129,7 @@ footer a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-<<<<<<< HEAD
 /* Right Panel (Graph) */
-=======
-/* API Key Section Styling */
-.api-key-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Space between input and button */
-    margin-top: 20px;
-    width: 100%;
-}
-
-.api-key-section input {
-    padding: 10px;
-    width: 70%; /* Adjust width for responsiveness */
-    max-width: 350px; /* Restrict max width */
-    border-radius: 8px;
-    border: 1px solid #888;
-    background-color: #333;
-    color: white;
-}
-
-.api-key-section button {
-    padding: 12px 18px;
-    background-color: #555;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-}
-
-.api-key-section button:hover {
-    background-color: #444;
-}
-
-/* Right side (Graph & Statistical Breakdown) */
->>>>>>> ccb139ec3c9f824ae80119887d03983269e44297
 .right-panel {
     flex: 1.5;
     min-width: 400px;
@@ -239,14 +201,9 @@ footer a:hover {
     background-color: #151515;
 }
 
-<<<<<<< HEAD
 #loading {
     color: #999;
     margin-left: 10px;
-=======
-button[type="button"]:hover {
-    background-color: #444;
->>>>>>> ccb139ec3c9f824ae80119887d03983269e44297
 }
 
 /* Food List Grid */
@@ -361,7 +318,6 @@ button[type="button"]:hover {
     background-color: #444;
 }
 
-<<<<<<< HEAD
 /* Statistical Breakdown */
 #statisticalBreakdown {
     margin-top: 15px;
@@ -427,8 +383,4 @@ button[type="button"]:hover {
         flex: 1;
         min-width: 100px;
     }
-=======
-#logoutButton:hover {
-    background-color: #c9302c;
->>>>>>> ccb139ec3c9f824ae80119887d03983269e44297
 }

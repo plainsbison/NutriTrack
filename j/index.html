@@ -3,27 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Healthy Habits Tracker</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-=======
-    <title>NutriTrack</title>
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="css/styles.css">
->>>>>>> ccb139ec3c9f824ae80119887d03983269e44297
 </head>
 <body>
     <!-- Header Section -->
     <header id="mainHeader">
-<<<<<<< HEAD
         <h1>NutriTrak</h1>
-=======
-        <h1>NutriTrack</h1>
->>>>>>> ccb139ec3c9f824ae80119887d03983269e44297
         <div id="navMenu">
         </div>
     </header>
@@ -32,13 +21,8 @@
         <!-- Left side (Search & Tracker) -->
         <div class="left-panel">
             <!-- API Key Input -->
-<<<<<<< HEAD
             <div id="apiKeySection">
                 <input type="password" id="apiKeyInput" placeholder="Enter API Key">
-=======
-            <div id="apiKeySection" class="api-key-section">
-                <input type="text" id="apiKeyInput" placeholder="Enter API Key">
->>>>>>> ccb139ec3c9f824ae80119887d03983269e44297
                 <button id="setApiKeyButton">Set API Key</button>
             </div>
 
@@ -61,17 +45,6 @@
                     <button id="clearTracker">Clear Tracker</button>
                     <button id="showBreakdown">Breakdown</button>
                 </div>
-
-                <!-- Statistical Breakdown Section -->
-                <div id="statisticalBreakdown" style="display: none;">
-                    <h4>Nutritional Summary</h4>
-                    <p><strong>Calories:</strong> <span id="caloriesStat">0</span></p>
-                    <p><strong>Fat:</strong> <span id="fatStat">0</span></p>
-                    <p><strong>Protein:</strong> <span id="proteinStat">0</span></p>
-                    <p><strong>Carbs:</strong> <span id="carbsStat">0</span></p>
-                    <p><strong>Fiber:</strong> <span id="fiberStat">0</span></p>
-                    <p><strong>Sugars:</strong> <span id="sugarsStat">0</span></p>
-                </div>
             </div>
         </div>
 
@@ -79,19 +52,28 @@
         <div class="right-panel">
             <h3>Macronutrient Graph</h3>
             <canvas id="macronutrientChart"></canvas>
-
+            
+            <!-- Statistical Breakdown Section (Moved under the Graph) -->
+            <div id="statisticalBreakdown" style="display: none;">
+                <h4>Nutritional Summary</h4>
+                <p><strong>Calories:</strong> <span id="caloriesStat">0</span></p>
+                <p><strong>Fat:</strong> <span id="fatStat">0</span></p>
+                <p><strong>Protein:</strong> <span id="proteinStat">0</span></p>
+                <p><strong>Carbs:</strong> <span id="carbsStat">0</span></p>
+                <p><strong>Fiber:</strong> <span id="fiberStat">0</span></p>
+                <p><strong>Sugars:</strong> <span id="sugarsStat">0</span></p>
+            </div>
         </div>
     </div>
 
     <!-- Footer Section -->
-<footer>
-    <p>&copy; 2025 Plainsbison. All rights reserved. |
-</footer>
-
+    <footer>
+        <p>&copy; 2025 Plainsbison. All rights reserved. |
+    </footer>
 
     <!-- Chart.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- External Script -->
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
