@@ -1,7 +1,7 @@
 # NutriTrak
 
 ## Overview
-NutriTrak is a web
+NutriTrak is a web-app designed to track food consumption through the integration of the USDA Food Database. It does this by allowing a User to search, select and then see a breakdown of their food's macronutrients.
 ## Features
 - **Dark Mode UI** – A sleek, modern interface with dark mode aesthetics.
 - **Food Search** – Look up food items and retrieve detailed nutritional data.
