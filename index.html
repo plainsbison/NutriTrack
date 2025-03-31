@@ -16,7 +16,6 @@
         <div id="navMenu">
         </div>
     </header>
-
     <div class="container">
         <!-- Left side (Search & Tracker) -->
         <div class="left-panel">
@@ -25,17 +24,14 @@
                 <input type="password" id="apiKeyInput" placeholder="Enter API Key">
                 <button id="setApiKeyButton">Set API Key</button>
             </div>
-
             <!-- Search bar and Button -->
             <div class="search-box">
                 <input type="text" id="foodInput" placeholder="Search for food...">
                 <button id="searchButton">Search</button>
                 <div id="loading" style="display: none;">Loading...</div>
             </div>
-
             <!-- Food List Grid (Search Results) -->
             <div id="foodListContainer" class="food-list-container" style="display: none;"></div>
-
             <!-- Tracked Foods -->
             <div class="tracker">
                 <h3>Tracked Foods</h3>
@@ -45,39 +41,32 @@
                     <button id="clearTracker">Clear Tracker</button>
                     <button id="showBreakdown">Breakdown</button>
                 </div>
-
-                <!-- Statistical Breakdown Section -->
-                <div id="statisticalBreakdown" style="display: none;">
-                    <h4>Nutritional Summary</h4>
-                    <p><strong>Calories:</strong> <span id="caloriesStat">0</span></p>
-                    <p><strong>Fat:</strong> <span id="fatStat">0</span></p>
-                    <p><strong>Protein:</strong> <span id="proteinStat">0</span></p>
-                    <p><strong>Carbs:</strong> <span id="carbsStat">0</span></p>
-                    <p><strong>Fiber:</strong> <span id="fiberStat">0</span></p>
-                    <p><strong>Sugars:</strong> <span id="sugarsStat">0</span></p>
-                </div>
             </div>
         </div>
-
-        <!-- Right side (Graph) -->
+        <!-- Right side (Graph and Breakdown) -->
         <div class="right-panel">
             <h3>Macronutrient Graph</h3>
             <canvas id="macronutrientChart"></canvas>
-
+            
+            <!-- Statistical Breakdown Section (Moved here) -->
+            <div id="statisticalBreakdown" style="display: none;">
+                <h4>Nutritional Summary</h4>
+                <p><strong>Calories:</strong> <span id="caloriesStat">0</span></p>
+                <p><strong>Fat:</strong> <span id="fatStat">0</span></p>
+                <p><strong>Protein:</strong> <span id="proteinStat">0</span></p>
+                <p><strong>Carbs:</strong> <span id="carbsStat">0</span></p>
+                <p><strong>Fiber:</strong> <span id="fiberStat">0</span></p>
+                <p><strong>Sugars:</strong> <span id="sugarsStat">0</span></p>
+            </div>
         </div>
     </div>
-
     <!-- Footer Section -->
-<footer>
-    <p>&copy; 2025 Plainsbison. All rights reserved. |
-</footer>
-
-
+    <footer>
+        <p>&copy; 2025 Plainsbison. All rights reserved. |
+    </footer>
     <!-- Chart.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- External Script -->
     <script src="javascript.js"></script>
-
-
 </body>
 </html>
