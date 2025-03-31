@@ -136,6 +136,12 @@ elements.clearTracker.addEventListener('click', function () {
     showNotification('Tracker cleared', 'info');
 });
 
+// Hide statistical breakdown
+function hideStatisticalBreakdown() {
+    elements.statisticalBreakdown.style.display = 'none';
+    elements.showBreakdown.textContent = 'Breakdown';
+}
+
 // Show or hide the statistical breakdown
 elements.showBreakdown.addEventListener('click', function () {
     const breakdownSection = elements.statisticalBreakdown;
@@ -308,17 +314,27 @@ function roundToTwoDecimalPlaces(value) {
 
 // Update the statistical breakdown of the tracked foods
 function updateStatisticalBreakdown() {
+    // Calculate nutrients
     const totalProtein = trackedFoods.reduce((sum, food) => sum + getNutrientValue(food, 'Protein'), 0);
     const totalSugars = trackedFoods.reduce((sum, food) => sum + getNutrientValue(food, 'Total Sugars'), 0);
     const totalFat = trackedFoods.reduce((sum, food) => sum + getNutrientValue(food, 'Total lipid (fat)'), 0);
     const totalCarbs = trackedFoods.reduce((sum, food) => sum + getNutrientValue(food, 'Carbohydrate, by difference'), 0);
     const totalFiber = trackedFoods.reduce((sum, food) => sum + getNutrientValue(food, 'Fiber, total dietary'), 0);
+    
+    // Calculate total calories - try both common nutrient names for energy
+    let totalCalories = trackedFoods.reduce((sum, food) => sum + getNutrientValue(food, 'Energy'), 0);
+    if (totalCalories === 0) {
+        // If "Energy" doesn't work, try "Calories" as an alternative
+        totalCalories = trackedFoods.reduce((sum, food) => sum + getNutrientValue(food, 'Calories'), 0);
+    }
 
-    elements.proteinStat.textContent = `Protein: ${roundToTwoDecimalPlaces(totalProtein)}g`;
-    elements.sugarsStat.textContent = `Sugars: ${roundToTwoDecimalPlaces(totalSugars)}g`;
-    elements.fatStat.textContent = `Fat: ${roundToTwoDecimalPlaces(totalFat)}g`;
-    elements.carbsStat.textContent = `Carbs: ${roundToTwoDecimalPlaces(totalCarbs)}g`;
-    elements.fiberStat.textContent = `Fiber: ${roundToTwoDecimalPlaces(totalFiber)}g`;
+    // Update UI elements
+    elements.proteinStat.textContent = `${roundToTwoDecimalPlaces(totalProtein)}g`;
+    elements.sugarsStat.textContent = `${roundToTwoDecimalPlaces(totalSugars)}g`;
+    elements.fatStat.textContent = `${roundToTwoDecimalPlaces(totalFat)}g`;
+    elements.carbsStat.textContent = `${roundToTwoDecimalPlaces(totalCarbs)}g`;
+    elements.fiberStat.textContent = `${roundToTwoDecimalPlaces(totalFiber)}g`;
+    elements.caloriesStat.textContent = `${roundToTwoDecimalPlaces(totalCalories)} kcal`;
 }
 
 // Show notification box
