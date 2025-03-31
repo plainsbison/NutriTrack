@@ -21,16 +21,17 @@ const elements = {
     sugarsStat: document.getElementById('sugarsStat')
 };
 
-// API key input section
+// API key input section, receive API key from USDA database
 elements.setApiKeyButton.addEventListener('click', function () {
     const apiKeyInput = elements.apiKeyInput.value.trim();
     if (!apiKeyInput) {
         showNotification('Please enter a valid API key', 'error');
         return;
     }
+    
     apiKey = apiKeyInput;
     showNotification('API Key set successfully!', 'success');
-    elements.apiKeyInput.value = ''; // Clear for security
+    elements.apiKeyInput.value = ''; 
 });
 
 // Search button click handler
@@ -103,6 +104,7 @@ function updateTrackedFoods() {
         emptyMessage.style.cursor = 'default';
         emptyMessage.style.opacity = '0.6';
         elements.trackedFoodsList.appendChild(emptyMessage);
+        resetStatValues(); 
         return;
     }
 
@@ -123,9 +125,24 @@ function removeFoodFromTracker(index) {
     trackedFoods.splice(index, 1);
     updateTrackedFoods();
     updateGraph();
+    
+    // If no more foods, reset values
+    if (trackedFoods.length === 0) {
+        resetStatValues();
+    }
 }
 
-// Clear the tracker list
+// clears values 
+function resetStatValues() {
+    elements.caloriesStat.textContent = "0 kcal";
+    elements.fatStat.textContent = "0g";
+    elements.proteinStat.textContent = "0g";
+    elements.carbsStat.textContent = "0g";
+    elements.fiberStat.textContent = "0g";
+    elements.sugarsStat.textContent = "0g";
+}
+
+// clears tracker
 elements.clearTracker.addEventListener('click', function () {
     if (trackedFoods.length === 0) return;
 
@@ -133,10 +150,11 @@ elements.clearTracker.addEventListener('click', function () {
     updateTrackedFoods();
     updateGraph();
     hideStatisticalBreakdown();
+    resetStatValues(); // resets when cleared
     showNotification('Tracker cleared', 'info');
 });
 
-// Hide statistical breakdown
+// hides statisticalbreakdown
 function hideStatisticalBreakdown() {
     elements.statisticalBreakdown.style.display = 'none';
     elements.showBreakdown.textContent = 'Breakdown';
@@ -259,6 +277,8 @@ function updateGraph() {
         }
     };
 
+    // chart stuff
+
     const ctx = document.getElementById('macronutrientChart').getContext('2d');
     window.myChart = new Chart(ctx, {
         type: 'bar',
@@ -314,6 +334,11 @@ function roundToTwoDecimalPlaces(value) {
 
 // Update the statistical breakdown of the tracked foods
 function updateStatisticalBreakdown() {
+    if (trackedFoods.length === 0) {
+        resetStatValues();
+        return;
+    }
+    
     // Calculate nutrients
     const totalProtein = trackedFoods.reduce((sum, food) => sum + getNutrientValue(food, 'Protein'), 0);
     const totalSugars = trackedFoods.reduce((sum, food) => sum + getNutrientValue(food, 'Total Sugars'), 0);
